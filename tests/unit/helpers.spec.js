@@ -95,7 +95,7 @@ describe('Helpers test', function() {
       expect(role).to.equal(req[opt.decodedObjectName].role);
     });
 
-    it('Should respond with 404', function() {
+    it('Should respond with 403', function() {
       let error = {
         message: 'REQUIRED: Role not found'
       };
@@ -103,7 +103,7 @@ describe('Helpers test', function() {
       let data = res._getData();
 
       expect(role).to.be.empty;
-      expect(res.statusCode).to.equal(404);
+      expect(res.statusCode).to.equal(403);
       expect(data.message).to.equal(error.message);
     });
   });
